@@ -20,11 +20,16 @@ public class Assignment1
        for (int i = 0; i < 30; i++) {
            while(true) {
            System.out.print("Please enter the marks of the student " + ( i + 1 ) + ": ");
-           double mark = scanner.nextDouble();
-           if(mark > 30 || mark < 0) {//Check for invalid data 
-               System.out.println("Invalid input! Mark should be between 0 and 30!");
+           if(scanner.hasNextDouble()) {//Check for invalid data 
+             double mark = scanner.nextDouble();
+             if(mark > 30 || mark < 0) {//Check for invalid data 
+                 System.out.println("Invalid! The mark should be a number between 0 and 30!");
+             } else {
+                 studentMarks[i] = mark; break;
+             }
            } else {
-               studentMarks[i] = mark; break;
+               System.out.println("Invalid! The mark should be a number between 0 and 30!");
+               scanner.next();//Preventing an infinite loop
            }
         }
        }
