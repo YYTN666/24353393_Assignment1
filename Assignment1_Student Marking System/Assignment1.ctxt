@@ -2,4 +2,8 @@
 comment0.target=Assignment1
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-numComments=2
+comment2.params=marks
+comment2.target=double\ findMinmumMark(double[])
+comment3.params=marks
+comment3.target=double\ findMaxmumMark(double[])
+numComments=4

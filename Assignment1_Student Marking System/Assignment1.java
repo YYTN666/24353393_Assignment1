@@ -33,7 +33,37 @@ public class Assignment1
            }
         }
        }
+       System.out.println("Assignment:" + assignmentName);
+       double minmumMark = findMinmumMark(studentMarks);
+       double maxmumMark = findMaxmumMark(studentMarks);
+       System.out.println("The lowest mark:" + minmumMark);
+       System.out.println("The highest mark:" + maxmumMark);
        scanner.close();
    }
+   
+   //Find the minmum mark
+   public static double findMinmumMark(double[] marks) {
+       double minMark = marks[0];
 
+        for (double mark : marks) {
+            if (mark < minMark) {
+                minMark = mark;
+            }
+        }
+
+        return minMark;
+   }
+   
+   //Find the maxmum mark
+   public static double findMaxmumMark(double[] marks) {
+       double maxMark = marks[0];
+
+        for (double mark : marks) {
+            if (mark > maxMark) {
+                maxMark = mark;
+            }
+        }
+
+        return maxMark;
+   }
 }

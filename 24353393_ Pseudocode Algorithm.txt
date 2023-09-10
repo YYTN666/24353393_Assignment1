@@ -1,0 +1,12 @@
+Algorithm1: Find the minimum and maximum values
+1.In the main method, call the findMinmumMark method and pass the studentMarks array as a parameter.
+2.In the main method, call the findMaxmumMark method and pass the studentMarks array as a parameter.
+3.Create two methods named findMinmumMark and findMaxmumMark to find the minimum and maximum values, respectively.
+4. Initialize a variable minMark to marks[0].
+5. For each mark in marks:
+      If mark is less than minMark, set minMark to the value of mark.
+6. Return minMark.
+7. Initialize a variable maxMark to marks[0].
+8. For each mark in marks:
+      If mark is bigger than maxMark, set maxMark to the value of mark.
+9. Return maxMark.
