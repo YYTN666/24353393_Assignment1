@@ -33,15 +33,16 @@ public class Assignment1
         }
        }
        
+       
+       
        System.out.println("Assignment:" + assignmentName);
        double minmumMark = findMinmumMark(studentMarks);
        double maxmumMark = findMaxmumMark(studentMarks);
-       double averageMark = findaverageMark(studentMarks);
+       double averageMark = findAverageMark(studentMarks);
        double standardDeviation = findStandardDeviation(studentMarks);
        System.out.println("The lowest mark:" + minmumMark);
        System.out.println("The highest mark:" + maxmumMark);
-       System.out.println("Average mark:" + averageMarkMark);
-       
+       System.out.println("Average mark:" + averageMark);
        System.out.println("Standard deviation:" + standardDeviation);
        scanner.close();
    }
@@ -73,24 +74,25 @@ public class Assignment1
    }
    
    //Find the mean of the marks
-   public static double findaverageMark(double[] marks) {
+   public static double findAverageMark(double[] marks) {
        double sum = 0;
 
         for (double mark : marks) {
             sum += mark;
         }
-        mean = sum / marks.length;
+        double mean = sum / marks.length;
         return mean;
    }
    
    //Find the standard deviation of the marks
-   public static double findStandardDeviation(double[] marks) {
+   public static double findStandardDeviation(double[] marks, double mean) {
        double sumSquaredDifference = 0;
        double difference;
         for (double mark : marks) {
             difference = mark - mean;
+            sumSquaredDifference += difference * difference;
         }
-        double mean = sum / marks.length;
+        double standardDeviation = (sumSquaredDifference / marks.length) ^ 0.5;
 
         return mean;
    }
