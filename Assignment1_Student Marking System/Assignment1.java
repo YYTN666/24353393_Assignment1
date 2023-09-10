@@ -36,19 +36,19 @@ public class Assignment1
        
        
        System.out.println("Assignment:" + assignmentName);
-       double minmumMark = findMinmumMark(studentMarks);
-       double maxmumMark = findMaxmumMark(studentMarks);
+       double MinimumMark = findMinimumMark(studentMarks);
+       double MaximumMark = findMaximumMark(studentMarks);
        double averageMark = findAverageMark(studentMarks);
-       double standardDeviation = findStandardDeviation(studentMarks);
-       System.out.println("The lowest mark:" + minmumMark);
-       System.out.println("The highest mark:" + maxmumMark);
+       double standardDeviation = findStandardDeviation(studentMarks, averageMark);
+       System.out.println("The lowest mark:" + MinimumMark);
+       System.out.println("The highest mark:" + MaximumMark);
        System.out.println("Average mark:" + averageMark);
        System.out.println("Standard deviation:" + standardDeviation);
        scanner.close();
    }
 
-   //Find the minmum mark
-   public static double findMinmumMark(double[] marks) {
+   //Find the Minimum mark
+   public static double findMinimumMark(double[] marks) {
        double minMark = marks[0];
 
         for (double mark : marks) {
@@ -60,8 +60,8 @@ public class Assignment1
         return minMark;
    }
    
-   //Find the maxmum mark
-   public static double findMaxmumMark(double[] marks) {
+   //Find the Maximum mark
+   public static double findMaximumMark(double[] marks) {
        double maxMark = marks[0];
 
         for (double mark : marks) {
@@ -87,13 +87,11 @@ public class Assignment1
    //Find the standard deviation of the marks
    public static double findStandardDeviation(double[] marks, double mean) {
        double sumSquaredDifference = 0;
-       double difference;
         for (double mark : marks) {
-            difference = mark - mean;
+            double difference = mark - mean;
             sumSquaredDifference += difference * difference;
         }
-        double standardDeviation = (sumSquaredDifference / marks.length) ^ 0.5;
-
-        return mean;
+        double standardDeviation = Math.sqrt(sumSquaredDifference / marks.length);
+        return standardDeviation;
    }
 }
