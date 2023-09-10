@@ -8,12 +8,11 @@
 import java.util.Scanner;
 public class Assignment1
 {
-   public static void main (String[] args){
+    public static void main (String[] args){
        //Ask the user to input the name of assignmnet  
        Scanner scanner = new Scanner(System.in);
        System.out.print("Please enter the name of the assignment:");
        String assignmentName = scanner.nextLine();
-       
        
        //Ask the user to input the marks of assignmnet  
        double[] studentMarks = new double[30];
@@ -33,14 +32,20 @@ public class Assignment1
            }
         }
        }
+       
        System.out.println("Assignment:" + assignmentName);
        double minmumMark = findMinmumMark(studentMarks);
        double maxmumMark = findMaxmumMark(studentMarks);
+       double averageMark = findaverageMark(studentMarks);
+       double standardDeviation = findStandardDeviation(studentMarks);
        System.out.println("The lowest mark:" + minmumMark);
        System.out.println("The highest mark:" + maxmumMark);
+       System.out.println("Average mark:" + averageMarkMark);
+       
+       System.out.println("Standard deviation:" + standardDeviation);
        scanner.close();
    }
-   
+
    //Find the minmum mark
    public static double findMinmumMark(double[] marks) {
        double minMark = marks[0];
@@ -65,5 +70,28 @@ public class Assignment1
         }
 
         return maxMark;
+   }
+   
+   //Find the mean of the marks
+   public static double findaverageMark(double[] marks) {
+       double sum = 0;
+
+        for (double mark : marks) {
+            sum += mark;
+        }
+        mean = sum / marks.length;
+        return mean;
+   }
+   
+   //Find the standard deviation of the marks
+   public static double findStandardDeviation(double[] marks) {
+       double sumSquaredDifference = 0;
+       double difference;
+        for (double mark : marks) {
+            difference = mark - mean;
+        }
+        double mean = sum / marks.length;
+
+        return mean;
    }
 }

@@ -1,12 +1,33 @@
 Algorithm1: Find the minimum and maximum values
-1.In the main method, call the findMinmumMark method and pass the studentMarks array as a parameter.
-2.In the main method, call the findMaxmumMark method and pass the studentMarks array as a parameter.
-3.Create two methods named findMinmumMark and findMaxmumMark to find the minimum and maximum values, respectively.
-4. Initialize a variable minMark to marks[0].
+1. Call the findMinmumMark method and pass the studentMarks array as a parameter.
+2. Call the findMaxmumMark method and pass the studentMarks array as a parameter.
+3. Create two methods named findMinmumMark and findMaxmumMark.
+4 .Initialize a variable minMark to marks[0].
 5. For each mark in marks:
-      If mark is less than minMark, set minMark to the value of mark.
+      If mark < minMark, 
+      minMark = mark
 6. Return minMark.
 7. Initialize a variable maxMark to marks[0].
 8. For each mark in marks:
-      If mark is bigger than maxMark, set maxMark to the value of mark.
+      If mark < maxMark, 
+      maxMark = mark
 9. Return maxMark.
+
+
+Algorithm2: Find the mean and standard deviation of the marks
+1. Call the findAverageMark method and pass the studentMarks array as a parameter.
+2. Call the findStandardDeviation method and pass the studentMarks array as a parameter.
+3. Create two methods named findAverageMark and findStandardDeviation.
+4. Initialize a variable sum to 0.
+5. For each mark in marks:
+      add mark to sum
+6. mean = sum / n
+7. Return mean.
+8.Initialize a variable  sumSquaredDifference to 0.
+9. For each mark in marks:
+      difference = mark - mean
+      squaredDifference= difference * difference
+      add squaredDifference to sumSquaredDifference.
+7. standardDeviation = (sumSquaredDifference / n)^0.5
+8. Return standardDeviation.
+
